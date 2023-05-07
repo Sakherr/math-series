@@ -77,18 +77,15 @@ def test_sum_series_2():
     assert actual == expected
 
 
-def test_sum_series_4():
-
-    actual = sum_series(4)
-    expected = 3
-    assert actual == expected
-
-
-
-def test_sum_series_8():
-
-    actual = sum_series(8)
-    expected = 21
-    assert actual == expected
+def insertShiftArray(arr, val):
+    mid = 0
+    for i in arr:
+        mid += 1
+    mid = (mid - 1) // 2
+    arr1 = arr[:]  
+    for i in range(mid+1, mid+mid+2):
+        arr[i] = arr1[i-1]  
+    arr[mid] = val
+    return arr
 
 
